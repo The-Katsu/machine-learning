@@ -13,36 +13,38 @@ df_raw = pd.read_csv('vgsales.csv')
 # Прибыльность регионов
 #################################################
 #
+
+# # Получим средние количество проданных копий по
+# # Северной Америке
 # na = df_raw['NA_Sales']
 # na_avg = 0
 # for x in na:
 #     na_avg += x
 # na_avg = na_avg/len(na)
 #
+#
+# # Европе
 # eu = df_raw['EU_Sales']
 # eu_avg = 0
 # for x in eu:
 #     eu_avg += x
 # eu_avg = eu_avg/len(eu)
 #
+# # Японии
 # jp = df_raw['JP_Sales']
 # jp_avg = 0
 # for x in jp:
 #     jp_avg += x
 # jp_avg = jp_avg/len(jp)
 #
+# # Других стран
 # other = df_raw['Other_Sales']
 # other_avg = 0
 # for x in other:
 #     other_avg += x
 # other_avg = other_avg/len(other)
 #
-# g = df_raw['Global_Sales']
-# g_avg = 0
-# for x in g:
-#     g_avg += x
-# g_avg = g_avg/len(g)
-#
+# # Создадим контейнеры данных
 # list = [na_avg, eu_avg, jp_avg, other_avg]
 # label = ["North America" "\n (" + str(round(na_avg, 3)) + ")",
 #          "Europe" "\n (" + str(round(eu_avg, 3)) + ")",
@@ -50,6 +52,7 @@ df_raw = pd.read_csv('vgsales.csv')
 #          "Others" "\n (" + str(round(other_avg, 3)) + ")"]
 # color=['red','blue','green','grey']
 #
+# # Отрисовка графика
 # squarify.plot(sizes=list, label=label, color=color, alpha=0.6 )
 # plt.title("Регионы - лидеры продаж" + "\n (В среднем продано копий)")
 # plt.axis('off')
