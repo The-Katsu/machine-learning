@@ -130,8 +130,51 @@ plt.show()
 *Количество копий в миллионах!  
 
 ![Картинка](https://github.com/The-Katsu/machine-learning/blob/main/lab1/regions.jpg?raw=true)
-### 4.
+### 4. Продажи именитых компаний
+```python
+# Импорт данных
+df_raw = pd.read_csv('vgsales.csv')
+
+# Загрузим издателей
+publishers = df_raw['Publisher']
+
+# Загрузим продажи
+gsales = df_raw['Global_Sales']
+
+# Определим именитых издателей
+pubs = ['Nintendo',
+        'Microsoft Game Studios',
+        'Take-Two Interactive',
+        'Activision',
+        'Sony Computer Entertainment']
+
+sales = [0, 0, 0, 0, 0]
+
+counter = 1
+
+# При совпадении прибавляем продажи  
+for x in publishers:
+    if x == pubs[0]:
+        sales[0] += gsales[counter]
+    if x == pubs[1]:
+        sales[1] += gsales[counter]
+    if x == pubs[2]:
+        sales[2] += gsales[counter]
+    if x == pubs[3]:
+        sales[3] += gsales[counter]
+    if x == pubs[4]:
+        sales[4] += gsales[counter]
+    counter += 1
+
+# Рисуем график
+plt.title("Общее число продаж в миллионах:")
+plt.bar(pubs, sales)
+plt.show()
+```
+*Измерения в миллионах проданных копий! 
+
+![Картинка](https://github.com/The-Katsu/machine-learning/blob/main/lab1/companies.jpg?raw=true)
 ---
 ## Выводы
 В результате данной работы был проанализирован датасет - [Video Game Sales](https://www.kaggle.com/gregorut/videogamesales).  
-Исходя из полученных результатов можно сделать выводы, что Action является самым популярным издаваемым жанром, PS2 и DS до сих пор держат первенство у издателей, т.к. для них было выпущено больше всего игр, а самым прибыльным регионом является Северная Америка.
+Исходя из полученных результатов можно сделать выводы, что Action является самым популярным издаваемым жанром, PS2 и DS до сих пор держат первенство у издателей, т.к. для них было выпущено больше всего игр, самым прибыльным регионом является Северная Америка, Nintendo является лидером по продажам копий своих игр.

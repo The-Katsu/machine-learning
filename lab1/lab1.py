@@ -5,13 +5,16 @@ import random
 import csv
 import math
 
-# Load Data
+# Импорт данных
 df_raw = pd.read_csv('vgsales.csv')
 
+# Загрузим издателей
 publishers = df_raw['Publisher']
 
+# Загрузим продажи
 gsales = df_raw['Global_Sales']
 
+# Определим именитых издателей
 pubs = ['Nintendo',
         'Microsoft Game Studios',
         'Take-Two Interactive',
@@ -22,6 +25,7 @@ sales = [0, 0, 0, 0, 0]
 
 counter = 1
 
+# При совпадении прибавляем продажи
 for x in publishers:
     if x == pubs[0]:
         sales[0] += gsales[counter]
@@ -35,6 +39,7 @@ for x in publishers:
         sales[4] += gsales[counter]
     counter += 1
 
+# Рисуем график
 plt.title("Общее число продаж в миллионах:")
 plt.bar(pubs, sales)
 plt.show()
