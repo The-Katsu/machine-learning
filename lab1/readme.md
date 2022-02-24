@@ -130,7 +130,7 @@ plt.show()
 *Количество копий в миллионах!  
 
 ![Картинка](https://github.com/The-Katsu/machine-learning/blob/main/lab1/regions.jpg?raw=true)
-
+### 4.
 ---
 ## Выводы
 В результате данной работы был проанализирован датасет - [Video Game Sales](https://www.kaggle.com/gregorut/videogamesales).  

@@ -8,6 +8,36 @@ import math
 # Load Data
 df_raw = pd.read_csv('vgsales.csv')
 
+publishers = df_raw['Publisher']
+
+gsales = df_raw['Global_Sales']
+
+pubs = ['Nintendo',
+        'Microsoft Game Studios',
+        'Take-Two Interactive',
+        'Activision',
+        'Sony Computer Entertainment']
+
+sales = [0, 0, 0, 0, 0]
+
+counter = 1
+
+for x in publishers:
+    if x == pubs[0]:
+        sales[0] += gsales[counter]
+    if x == pubs[1]:
+        sales[1] += gsales[counter]
+    if x == pubs[2]:
+        sales[2] += gsales[counter]
+    if x == pubs[3]:
+        sales[3] += gsales[counter]
+    if x == pubs[4]:
+        sales[4] += gsales[counter]
+    counter += 1
+
+plt.title("Общее число продаж в миллионах:")
+plt.bar(pubs, sales)
+plt.show()
 
 ##################################################
 # Прибыльность регионов
